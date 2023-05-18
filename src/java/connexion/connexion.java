@@ -26,8 +26,9 @@ public class connexion {
     Connection cn;
     public connexion(){
         try{
-        Class.forName("oracle.jdbc.OracleDriver");
-          cn= DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl", "pfe", "ntic");
+        Class.forName("com.mysql.cj.jdbc.Driver");
+
+          cn=DriverManager.getConnection("jdbc:mysql://localhost:3306/testjava","root","");
           st=cn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
         }
         catch(Exception e)
